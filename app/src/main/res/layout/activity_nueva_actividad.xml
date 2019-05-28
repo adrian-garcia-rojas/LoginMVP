@@ -6,4 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".NuevaActividad.view.NuevaActividad">
 
+    <TextView
+        android:id="@+id/txtNuevaActividad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Nueva actividad!!!"
+        android:textAlignment="center"
+        android:textSize="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

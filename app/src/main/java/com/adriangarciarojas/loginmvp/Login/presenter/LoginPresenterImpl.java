@@ -12,25 +12,33 @@ public class LoginPresenterImpl implements LoginPresenter {
     private LoginInteractor interactor;
 
     //para que el presenter pueda funcionar nececitamos que en su metodo contructor se este inyectando la vista (ctrl + N)
-
-
     public LoginPresenterImpl(LoginView loginView) {
         this.loginView = loginView;
         interactor = new LoginInteractorImpl(this);
     }
 
+
+
     @Override
     public void singIn(String username, String password) {
+        loginView.inputsDesabilitados();
+        loginView.mostrarProgressBar();
 
+        interactor.singIn(username, password);
     }
 
     @Override
     public void loginSuccess() {
+        loginView.abrirNuevaActividad();
 
+        loginView.ocultarProgressBar();
     }
 
     @Override
-    public void loginError() {
+    public void loginError(String error) {
+        loginView.inputsHabilitados();
+        loginView.ocultarProgressBar();
+        loginView.loginError(error);
 
     }
 }
